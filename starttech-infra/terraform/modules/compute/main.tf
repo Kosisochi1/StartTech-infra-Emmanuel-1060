@@ -316,9 +316,18 @@ resource "aws_lb_listener" "alb_listener" {
 # Key Pair
 #=====================
 
-resource "aws_key_pair" "aws_key_pair" {
-  key_name   = var.key_name
-  public_key = file("~/.ssh/id_rsa.pub")
+# resource "aws_key_pair" "aws_key_pair" {
+#   key_name   = var.key_name
+#   public_key = file("~/.ssh/id_rsa.pub")
+# }
+resource "tls_private_key" "key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "aws_key_pair" "generated_key" {
+  key_name   = "starttech-key"
+  public_key = tls_private_key.key.public_key_openssh
 }
 
 

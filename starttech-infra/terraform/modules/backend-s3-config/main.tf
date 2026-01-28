@@ -146,7 +146,7 @@ resource "aws_iam_role" "github_action_role" {
         Action = "sts:AssumeRoleWithWebIdentity"
         Condition = {
           StringEquals = {
-            "token.actions.githubusercontent.com:sub" = "repo:Kosisochi1/StartTech-Application:ref:refs/heads/main"
+            "token.actions.githubusercontent.com:sub" = "repo:Kosisochi1/StartTech-infra-Emmanuel-1060:ref:refs/heads/main"
           }
         }
       }
@@ -168,7 +168,7 @@ resource "aws_iam_role" "github_actions" {
         Action = "sts:AssumeRoleWithWebIdentity"
         Condition = {
           StringEquals = {
-            "token.actions.githubusercontent.com:sub" = "repo:Kosisochi1/StartTech-Application:ref:refs/heads/main"
+            "token.actions.githubusercontent.com:sub" = "repo:Kosisochi1/StartTech-infra-Emmanuel-1060:ref:refs/heads/main"
           }
         }
       }
