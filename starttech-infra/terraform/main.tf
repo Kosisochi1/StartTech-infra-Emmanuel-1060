@@ -8,8 +8,8 @@ terraform {
   }
 }
 provider "aws" {
-  region  = var.aws_region
-  profile = var.my_profile
+  region = var.aws_region
+  # profile = var.my_profile
 
 }
 module "networking" {
